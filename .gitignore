@@ -1,0 +1,8 @@
+# Binaries
+intellilog
+
+# OS specific
+.DS_Store
+
+# Go
+/vendor/

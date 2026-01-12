@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelliLog | AI-Powered Monitoring</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="login-overlay" class="glass-overlay">
+        <div class="login-box glass-panel">
+            <h2>IntelliLog Access</h2>
+            <input type="text" id="username" placeholder="Username" value="admin">
+            <input type="password" id="password" placeholder="Password" value="password">
+            <button onclick="login()">Enter Dashboard</button>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <nav class="sidebar glass-panel">
+            <div class="logo">
+                <i class="fa-solid fa-brain"></i> IntelliLog
+            </div>
+            <ul class="nav-links">
+                <li class="active"><i class="fa-solid fa-stream"></i> Live Logs</li>
+                <li><i class="fa-solid fa-chart-line"></i> Analytics</li>
+                <li><i class="fa-solid fa-robot"></i> AI Insights</li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <header class="top-bar glass-panel">
+                <div class="status-indicator">
+                    <span class="dot pulse"></span> System Online
+                </div>
+                <div class="user-profile">
+                    <i class="fa-solid fa-user-circle"></i> Admin
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <div class="stat-card glass-panel">
+                    <h3>Total Logs</h3>
+                    <div class="value" id="stats-total">0</div>
+                </div>
+                <div class="stat-card glass-panel warning">
+                    <h3>Anomalies</h3>
+                    <div class="value" id="stats-anomalies">0</div>
+                </div>
+                <div class="stat-card glass-panel success">
+                    <h3>System Health</h3>
+                    <div class="value">98%</div>
+                </div>
+            </div>
+
+            <div class="logs-section glass-panel">
+                <div class="section-header">
+                    <h2>Live Log Stream</h2>
+                    <button class="refresh-btn" onclick="fetchLogs()"><i class="fa-solid fa-sync"></i> Refresh</button>
+                </div>
+                <div class="log-table-container">
+                    <table id="logs-table">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>Level</th>
+                                <th>Service</th>
+                                <th>Message</th>
+                                <th>AI Analysis</th>
+                            </tr>
+                        </thead>
+                        <tbody id="logs-body">
+                            <!-- Logs will be injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
